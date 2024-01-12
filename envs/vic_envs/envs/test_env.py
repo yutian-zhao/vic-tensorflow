@@ -1,25 +1,24 @@
-import gym
-from gym import error, spaces, utils
-from gym.utils import seeding
+import gymnasium as gym
+from gymnasium import error, spaces, utils
+from gymnasium.utils import seeding
 
 
 class TestEnv(gym.Env):
-    metadata = {'render.modes': ['human']}
+    metadata = {"render.modes": ["human"]}
 
     def __init__(self):
-        self._seed()
-        self._reset()
+        self.seed()
+        self.reset()
 
-    def _seed(self, seed=None):
+    def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-    def _step(self, action):
+    def step(self, action):
         pass
 
-    def _reset(self):
+    def reset(self):
         pass
 
-    def _render(self, mode='human', close=False):
+    def render(self, mode="human", close=False):
         pass
-
